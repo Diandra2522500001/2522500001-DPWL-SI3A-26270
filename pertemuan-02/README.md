@@ -53,15 +53,13 @@ Pada implementasi P2, Model belum digunakan karena akses dan pengelolaan basis d
 
 ## 8. Bukti Tangkapan Layar
 ### Gambar 1. Hasil Pengujian Halaman Utama
-![Gambar 1 - Halaman Utama](dokumentasi/tes1.jpg)
+![Gambar 1 - Halaman Utama](dokumentasi/tes1.png)
 
 ### Gambar 2. Hasil Pengujian Custom Route
-![Gambar 2 - Custom Route](dokumentasi/gambar2.jpg)
+![Gambar 2 - Custom Route](dokumentasi/gambar2.png)
 
 ### Gambar 3. Hasil Pengujian Route Info
-![Gambar 2 - Custom Route](dokumentasi/gambar3.jpg)
-
-*(Catatan: Ubah format ekstensi .jpg menjadi .png jika tangkapan layar yang Anda simpan di folder `dokumentasi/` berformat PNG).*
+![Gambar 2 - Custom Route](dokumentasi/gambar3.png)
 
 ## 9. Kesimpulan P2
 Dari praktikum ini, kerangka kerja MVC dasar yang dibangun sudah dapat menerima *request*, melakukan proses *routing* untuk menerjemahkan URL menjadi perintah spesifik, memanggil *Controller* beserta method dan parameternya, serta memuat antarmuka pengguna secara dinamis melalui *View*[cite: 4]. Fitur baru yang akan ditambahkan pada implementasi P3 adalah layer *Model*, yang nantinya akan melengkapi keseluruhan arsitektur agar aplikasi ini dapat terhubung ke dalam pengelolaan basis data[cite: 4].
