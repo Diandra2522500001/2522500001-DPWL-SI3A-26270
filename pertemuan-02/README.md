@@ -53,10 +53,13 @@ Pada implementasi P2, Model belum digunakan karena akses dan pengelolaan basis d
 
 ## 8. Bukti Tangkapan Layar
 ### Gambar 1. Hasil Pengujian Halaman Utama
-![Gambar 1 - Halaman Utama](dokumentasi/gambar1.jpg)
+![Gambar 1 - Halaman Utama](dokumentasi/tes1.jpg)
 
 ### Gambar 2. Hasil Pengujian Custom Route
 ![Gambar 2 - Custom Route](dokumentasi/gambar2.jpg)
+
+### Gambar 3. Hasil Pengujian Route Info
+![Gambar 2 - Custom Route](dokumentasi/gambar3.jpg)
 
 *(Catatan: Ubah format ekstensi .jpg menjadi .png jika tangkapan layar yang Anda simpan di folder `dokumentasi/` berformat PNG).*
 
