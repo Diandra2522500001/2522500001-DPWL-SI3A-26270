@@ -1,9 +1,9 @@
-Pertemuan 02
+# Pertemuan 02
 
-1. Tujuan Praktikum
+## 1. Tujuan Praktikum
 Tujuan praktikum P2 ini adalah untuk membuat dan memahami dasar-dasar arsitektur Model-View-Controller (MVC) menggunakan PHP asli (native) tanpa framework[cite: 4, 5]. Melalui praktikum ini, saya belajar bagaimana alur sebuah *request* ditangani oleh *front controller*, dipetakan oleh *router*, dan diproses oleh *controller* sebelum akhirnya ditampilkan ke layar melalui *view*[cite: 4, 5].
 
-2. Struktur Direktori
+## 2. Struktur Direktori
 - `pertemuan-02/`: Folder utama proyek MVC[cite: 4].
 - `application/`: Folder untuk menyimpan kode spesifik aplikasi yang sedang dibangun, berisi konfigurasi (`config/`), logika pengontrol (`controllers/`), dan file antarmuka (`views/`)[cite: 4].
 - `assets/`: Direktori untuk menyimpan aset publik statis seperti file CSS (`app.css`), JavaScript, dan gambar[cite: 4].
@@ -12,10 +12,10 @@ Tujuan praktikum P2 ini adalah untuk membuat dan memahami dasar-dasar arsitektur
 - `index.php`: File utama sebagai titik masuk aplikasi (*front controller*)[cite: 4].
 - `README.md`: File dokumentasi dan laporan hasil implementasi praktikum[cite: 4].
 
-3. Front controller
+## 3. Front controller
 File `index.php` berfungsi sebagai gerbang utama atau satu-satunya pintu masuk (single entry point) bagi seluruh *request* dari *browser*[cite: 4]. Daripada memanggil file PHP yang berbeda-beda secara langsung, semua permintaan dari pengguna akan diarahkan ke `index.php` ini terlebih dahulu. File ini yang kemudian akan memanggil komponen-komponen sistem (seperti router) untuk mendistribusikan *request* tersebut ke *controller* yang tepat[cite: 4].
 
-4. Routing dan Pemetaan URL
+## 4. Routing dan Pemetaan URL
 | URL/Route | Controller | Method | Parameter | View |
 |---|---|---|---|---|
 | / | Home | index | - | home/index.php |
@@ -27,11 +27,11 @@ File `index.php` berfungsi sebagai gerbang utama atau satu-satunya pintu masuk (
 **Penjelasan rute modifikasi ATM:**
 Pemetaan rute `siswa/(:num)` mengarahkan URL ke Controller `Home` dan memanggil method `siswa`[cite: 4]. Parameter angka dari URL (contohnya `2522500001`) akan ditangkap oleh *wildcard* `(:num)` dan dioper ke variabel parameter `$nisn` di dalam method tersebut[cite: 4]. Selanjutnya, method ini mengembalikan *View* `home/siswa` yang merender rincian data mahasiswa berdasarkan konteks parameter yang dikirim[cite: 4].
 
-5. Base URL dan Helper
+## 5. Base URL dan Helper
 - `base_url()`: Berfungsi untuk mengembalikan *string* alamat dasar URL aplikasi (root direktori proyek). Ini sangat berguna untuk memanggil file-file aset eksternal (statis). Contoh pada implementasi P2: `<link rel="stylesheet" href="<?= base_url('assets/css/app.css') ?>">`[cite: 4].
 - `site_url()`: Mirip dengan `base_url()`, tetapi fungsi ini digunakan khusus untuk membuat tautan internal navigasi aplikasi yang menyertakan file *front controller* (`index.php`), sehingga sistem *routing* bekerja dengan baik. Contoh implementasi: `<a href="<?= site_url('siswa/2522500001') ?>">Lihat Siswa</a>`[cite: 4].
 
-6. Alur Request-response
+## 6. Alur Request-response
 **1. Alur eksekusi aktual P2:**
 Saat pengguna mengakses URL di *browser*, *request* dikirim ke `index.php` sebagai Front Controller[cite: 4]. File ini meneruskannya ke objek `Router` yang akan mencocokkan URL dengan rute di `routes.php`[cite: 4]. Setelah cocok, router mengeksekusi `Controller` beserta method-nya[cite: 4]. Controller memproses data array dan memuat file `View`[cite: 4]. Hasil akhir dari View ini dikembalikan dalam format HTML sebagai *Response* ke *browser*[cite: 4].
 
@@ -40,7 +40,7 @@ Browser → `index.php` → `Router` → `Controller` → meminta data ke `Model
 
 Pada implementasi P2, Model belum digunakan karena akses dan pengelolaan basis data baru akan mulai diimplementasikan pada pertemuan P3[cite: 4].
 
-7. Hasil Pengujian dan Debugging
+## 7. Hasil Pengujian dan Debugging
 **Skenario Pengujian Valid dan Tidak Valid:**
 - **Valid:** Mengakses rute yang terdaftar (seperti `.../index.php/siswa/2522500001`). Hasil: halaman dirender dengan sempurna tanpa error, menampilkan data variabel siswa ke dalam *View*[cite: 4].
 - **Tidak Valid:** Mengakses rute acak yang tidak ada atau *controller* yang tidak dibuat. Hasil: aplikasi memunculkan status kode 404 dari `Router.php` ("Route tidak valid" atau "Controller tidak ditemukan")[cite: 4].
@@ -51,14 +51,14 @@ Pada implementasi P2, Model belum digunakan karena akses dan pengelolaan basis d
 - **Perbaikan:** Memastikan penulisan URL di *browser* diketik sesuai dengan nama direktori yang tepat di repositori lokal, serta memastikan aturan routing custom `$route['siswa/(:num)'] = 'home/siswa/$1';` sudah tersimpan di `routes.php`[cite: 4].
 - **Hasil Uji Ulang:** URL berhasil ditangkap oleh server, diarahkan ke rute yang benar oleh Router, berhasil mengakses method di Controller Home, dan menampilkan View ke browser tanpa memicu pesan error 404[cite: 4].
 
-8. Bukti Tangkapan Layar
-Gambar 1. Hasil Pengujian Halaman Utama
+## 8. Bukti Tangkapan Layar
+### Gambar 1. Hasil Pengujian Halaman Utama
 ![Gambar 1 - Halaman Utama](dokumentasi/gambar1.jpg)
 
-Gambar 2. Hasil Pengujian Custom Route
+### Gambar 2. Hasil Pengujian Custom Route
 ![Gambar 2 - Custom Route](dokumentasi/gambar2.jpg)
 
 *(Catatan: Ubah format ekstensi .jpg menjadi .png jika tangkapan layar yang Anda simpan di folder `dokumentasi/` berformat PNG).*
 
-9. Kesimpulan P2
+## 9. Kesimpulan P2
 Dari praktikum ini, kerangka kerja MVC dasar yang dibangun sudah dapat menerima *request*, melakukan proses *routing* untuk menerjemahkan URL menjadi perintah spesifik, memanggil *Controller* beserta method dan parameternya, serta memuat antarmuka pengguna secara dinamis melalui *View*[cite: 4]. Fitur baru yang akan ditambahkan pada implementasi P3 adalah layer *Model*, yang nantinya akan melengkapi keseluruhan arsitektur agar aplikasi ini dapat terhubung ke dalam pengelolaan basis data[cite: 4].
