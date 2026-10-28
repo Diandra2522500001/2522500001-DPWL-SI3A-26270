@@ -1,7 +1,7 @@
 # Pertemuan 06
 
 ### Gambar 1. Beranda
-![Gambar 1 - Halaman Beranda](dokumentasi/tes1.png)
+![Gambar 1 - Halaman Beranda](dokumentasi/gambar1.png)
 
 ### Gambar 2. Katalog
 ![Gambar 2 - Custom Katalog](dokumentasi/gambar2.png)
