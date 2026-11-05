@@ -13,4 +13,4 @@
 ![Gambar 4](dokumentasi/gambar4.png)
 
 ### Gambar 5
-![Gambar 4](dokumentasi/gambar5.png)
+![Gambar 5](dokumentasi/gambar5.png)
